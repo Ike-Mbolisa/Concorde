@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concorde — Supersonic Explorer</title>
-<link rel="stylesheet" href="style.css">
+  <title>Concorde - Supersonic Explorer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -26,11 +26,11 @@
   <div class="titleCard-content">
     <div class="titleCard-tag">1969 - 2003</div>
     <h1>Flying at the<br>Edge of <span>Sound</span></h1>
-    <p>The Concorde was humanity's only commercial supersonic passenger aircraft — crossing the Atlantic in under 3.5 hours at Mach 2.04, twice the speed of sound.</p>
+    <p>The Concorde was humanity's only commercial supersonic passenger aircraft - crossing the Atlantic in under 3.5 hours at Mach 2.04, twice the speed of sound.</p>
     <div class="titleCard-stats">
       <div class="stat"><span class="stat-value">Mach 2.04</span><span class="stat-label">Cruise Speed</span></div>
       <div class="stat"><span class="stat-value">18,300 m</span><span class="stat-label">Cruise Altitude</span></div>
-      <div class="stat"><span class="stat-value">3h 30m</span><span class="stat-label">London → NYC</span></div>
+      <div class="stat"><span class="stat-value">3h 30m</span><span class="stat-label">London -> NYC</span></div>
       <div class="stat"><span class="stat-value">100</span><span class="stat-label">Passengers</span></div>
     </div>
   </div>
@@ -42,14 +42,14 @@
   <h2>What Was the Concorde?</h2>
   <div class="story-grid">
     <div class="story-text">
-      <p>The Concorde was a joint British–French engineering project, the product of an international treaty signed in 1962. It entered commercial service in 1976, operated by British Airways and Air France, and flew for 27 years before its retirement in 2003.</p>
-      <p>Flying at altitudes above 18,300 metres — higher than most weather — passengers could see the curvature of the Earth. The aircraft's aluminium skin reached 127 °C during cruise, causing the fuselage to expand by up to 25 cm. Windows were warm to the touch.</p>
+      <p>The Concorde was a joint British-French engineering project, the product of an international treaty signed in 1962. It entered commercial service in 1976, operated by British Airways and Air France, and flew for 27 years before its retirement in 2003.</p>
+      <p>Flying at altitudes above 18,300 metres - higher than most weather - passengers could see the curvature of the Earth. The aircraft's aluminium skin reached 127 °C during cruise, causing the fuselage to expand by up to 25 cm. Windows were warm to the touch.</p>
       <p>The delta wing design, with no separate horizontal tailplane, was chosen because it produces low drag at supersonic speeds. The distinctive drooped nose allowed pilots to see the runway during the steep approach that the design demanded.</p>
     </div>
     <div class="story-facts">
       <div class="fact-card">
         <h4>Engines</h4>
-        <p>4 × Rolls-Royce/SNECMA Olympus 593 turbojets, each producing 169.3 kN of thrust with reheat. The engines consumed fuel at roughly 25,629 kg/h at cruise.</p>
+        <p>4 x Rolls-Royce/SNECMA Olympus 593 turbojets, each producing 169.3 kN of thrust with reheat. The engines consumed fuel at roughly 25,629 kg/h at cruise.</p>
       </div>
       <div class="fact-card">
         <h4>Materials Challenge</h4>
@@ -57,7 +57,7 @@
       </div>
       <div class="fact-card">
         <h4>Sonic Boom</h4>
-        <p>Flying supersonically over land was banned in most countries. Concorde was restricted to oceanic routes because its sonic boom — roughly 100 dB on the ground — would disturb populations below.</p>
+        <p>Flying supersonically over land was banned in most countries. Concorde was restricted to oceanic routes because its sonic boom - roughly 100 dB on the ground - would disturb populations below.</p>
       </div>
       <div class="fact-card">
         <h4>Economic Fate</h4>
@@ -71,14 +71,19 @@
 <section id="physics">
   <div class="section-tag">Interactive Physics</div>
   <h2>The Science Behind the Speed</h2>
-  <p class="section-intro">Two of the most critical physical phenomena that shaped the Concorde's design — explore them interactively below.</p>
+  <p class="section-intro">Two of the most critical physical phenomena that shaped the Concorde's design - explore them interactively below.</p>
 
   <div class="physics-grid">
     <!-- 1: Mach Cone -->
     <div class="interactive-card">
       <h3>Mach Cone &amp; Sonic Boom</h3>
-      <p class="desc">As an aircraft accelerates past the speed of sound, it outruns its own pressure waves. A conical shockwave forms — the sonic boom. Drag the speed slider to see how the cone angle changes.</p>
-      <canvas id="machCanvas" width="500" height="300"></canvas>
+      <p class="desc">As an aircraft accelerates past the speed of sound, it outruns its own pressure waves. A conical shockwave forms - the sonic boom. Drag the speed slider to see how the cone angle changes.</p>
+      <canvas id="machCanvas" width="500" height="300"
+        data-travel-label="direction of travel"
+        data-subsonic-text="Subsonic - pressure waves travel ahead of the plane"
+        data-transonic-text="Transonic - shockwave forming, unstable drag rise"
+        data-supersonic-text="Supersonic - Mach angle u = {mu} deg, sonic boom on the ground"
+      ></canvas>
       <div class="controls">
         <div class="control-row">
           <label>Speed</label>
@@ -86,14 +91,19 @@
           <span class="readout" id="machReadout">Mach 0.50</span>
         </div>
       </div>
-      <div class="info-badge" id="machInfo">⬤ Subsonic — no shockwave yet</div>
+      <div class="info-badge" id="machInfo">Subsonic - no shockwave yet</div>
     </div>
 
     <!-- 2: Thermal Expansion -->
     <div class="interactive-card">
       <h3>Aerodynamic Heating &amp; Thermal Expansion</h3>
       <p class="desc">Friction with air at supersonic speeds heats the fuselage significantly. The Concorde grew ~25 cm at cruise. The colour shows skin temperature, and the fuselage visibly stretches.</p>
-      <canvas id="heatCanvas" width="500" height="300"></canvas>
+      <canvas id="heatCanvas" width="500" height="300"
+        data-cold-label="Cold length (ground)"
+        data-temp-label="fuselage skin temperature"
+        data-badge-prefix="Skin temp"
+        data-exp-label="Expansion"
+      ></canvas>
       <div class="controls">
         <div class="control-row">
           <label>Mach Speed</label>
@@ -101,7 +111,7 @@
           <span class="readout" id="heatReadout">Mach 0.00</span>
         </div>
       </div>
-      <div class="info-badge" id="heatInfo">🌡 Skin temp: ~15 °C (ground)</div>
+      <div class="info-badge" id="heatInfo">Skin temp: ~15 °C (ground)</div>
     </div>
   </div>
 </section>
@@ -124,12 +134,12 @@
     <div class="tl-item">
       <div class="tl-year">1976</div>
       <h4>Commercial Service Begins</h4>
-      <p>British Airways and Air France launch simultaneous commercial services — London to Bahrain, and Paris to Rio de Janeiro.</p>
+      <p>British Airways and Air France launch simultaneous commercial services - London to Bahrain, and Paris to Rio de Janeiro.</p>
     </div>
     <div class="tl-item">
       <div class="tl-year">1996</div>
       <h4>Speed Record</h4>
-      <p>Concorde sets the transatlantic crossing record — New York to London in 2 hours, 52 minutes, 59 seconds.</p>
+      <p>Concorde sets the transatlantic crossing record - New York to London in 2 hours, 52 minutes, 59 seconds.</p>
     </div>
     <div class="tl-item">
       <div class="tl-year">2000</div>
@@ -148,342 +158,8 @@
   Concorde Interactive Explorer &nbsp;|&nbsp; Built with HTML, CSS &amp; Canvas API
 </footer>
 
-<script>
-// ════════════════════════════════════════════════
-//  1. MACH CONE VISUALIZER
-// ════════════════════════════════════════════════
-(function () {
-  const canvas = document.getElementById('machCanvas');
-  const ctx    = canvas.getContext('2d');
-  const slider = document.getElementById('machSlider');
-  const readout= document.getElementById('machReadout');
-  const badge  = document.getElementById('machInfo');
-
-  // Retina scaling
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width  = 500 * dpr; canvas.height = 300 * dpr;
-  canvas.style.width = '100%'; canvas.style.height = 'auto';
-  ctx.scale(dpr, dpr);
-  const W = 500, H = 300;
-
-  let mach = 0.5;
-  let time = 0;
-  let wavefronts = []; // { x, r, age }
-  let planeX = 80;
-  const PLANE_SPEED_PX_S = 120; // pixels per second at mach 1 (visual)
-  const SOUND_SPEED_PX_S = 120;
-  let lastT = null;
-  const MAX_WAVES = 30;
-
-  function spawnWave() {
-    wavefronts.push({ x: planeX, r: 0 });
-  }
-
-  function draw(ts) {
-    if (!lastT) lastT = ts;
-    const dt = Math.min((ts - lastT) / 1000, 0.05);
-    lastT = ts;
-    time += dt;
-
-    const planeVPx = mach * PLANE_SPEED_PX_S;
-    planeX += planeVPx * dt;
-    if (planeX > W + 20) {
-      planeX = -20;
-      wavefronts = [];
-    }
-
-    // Spawn a wavefront every ~0.4 s (visual)
-    if (Math.floor(time * 2.5) > Math.floor((time - dt) * 2.5)) {
-      if (wavefronts.length < MAX_WAVES) spawnWave();
-    }
-
-    // Grow wave radii
-    wavefronts.forEach(w => { w.r += SOUND_SPEED_PX_S * dt; });
-    // Cull off-screen
-    wavefronts = wavefronts.filter(w => w.r < W * 1.5 && w.x - w.r < W);
-
-    // ─ Draw ─
-    ctx.clearRect(0, 0, W, H);
-
-    // Background gradient
-    const bg = ctx.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#0a0c14');
-    bg.addColorStop(1, '#0f1220');
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, W, H);
-
-    // Wave circles
-    wavefronts.forEach(w => {
-      const alpha = Math.max(0, 0.6 - w.r / (W * 0.8));
-      ctx.beginPath();
-      ctx.arc(w.x, H / 2, w.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(126,184,212,${alpha})`;
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-    });
-
-    // Mach cone lines (only when supersonic)
-    if (mach >= 1.0) {
-      const sinMu = 1 / mach;
-      const mu = Math.asin(Math.min(1, sinMu));
-      const coneLen = W * 0.85;
-
-      ctx.save();
-      ctx.translate(planeX, H / 2);
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(-coneLen, -Math.tan(mu) * coneLen);
-      ctx.moveTo(0, 0);
-      ctx.lineTo(-coneLen,  Math.tan(mu) * coneLen);
-      ctx.strokeStyle = 'rgba(224,92,92,0.75)';
-      ctx.lineWidth = 2;
-      ctx.setLineDash([6, 4]);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Angle label
-      const angleDeg = (mu * 180 / Math.PI).toFixed(1);
-      ctx.fillStyle = 'rgba(224,92,92,0.85)';
-      ctx.font = '11px monospace';
-      ctx.fillText(`μ = ${angleDeg}°`, -coneLen * 0.5, -Math.tan(mu) * coneLen * 0.5 - 6);
-      ctx.restore();
-    }
-
-    // Plane body
-    ctx.save();
-    ctx.translate(planeX, H / 2);
-    // fuselage
-    ctx.fillStyle = '#e8e8f0';
-    ctx.beginPath();
-    ctx.ellipse(0, 0, 22, 5, 0, 0, Math.PI * 2);
-    ctx.fill();
-    // nose
-    ctx.beginPath();
-    ctx.moveTo(22, 0); ctx.lineTo(36, 1); ctx.lineTo(22, 2);
-    ctx.fillStyle = '#c8a96e'; ctx.fill();
-    // wing
-    ctx.beginPath();
-    ctx.moveTo(0, 0); ctx.lineTo(-16, -14); ctx.lineTo(-8, 0);
-    ctx.fillStyle = 'rgba(200,169,110,0.7)'; ctx.fill();
-    ctx.restore();
-
-    // Labels
-    ctx.fillStyle = 'rgba(122,122,154,0.7)';
-    ctx.font = '11px sans-serif';
-    ctx.fillText('← direction of travel', W - 180, 20);
-
-    requestAnimationFrame(draw);
-  }
-
-  slider.addEventListener('input', () => {
-    mach = parseFloat(slider.value);
-    readout.textContent = `Mach ${mach.toFixed(2)}`;
-    if (mach < 1.0) {
-      badge.textContent = '⬤ Subsonic — pressure waves travel ahead of the plane';
-      badge.style.background = 'rgba(126,184,212,0.1)';
-      badge.style.borderColor = 'rgba(126,184,212,0.3)';
-      badge.style.color = '#7eb8d4';
-    } else if (mach < 1.2) {
-      badge.textContent = '⬤ Transonic — shockwave forming, unstable drag rise';
-      badge.style.background = 'rgba(200,169,110,0.1)';
-      badge.style.borderColor = 'rgba(200,169,110,0.3)';
-      badge.style.color = '#c8a96e';
-    } else {
-      const mu = (Math.asin(1 / mach) * 180 / Math.PI).toFixed(1);
-      badge.textContent = `⬤ Supersonic — Mach angle μ = ${mu}°, sonic boom on the ground`;
-      badge.style.background = 'rgba(224,92,92,0.1)';
-      badge.style.borderColor = 'rgba(224,92,92,0.3)';
-      badge.style.color = '#e05c5c';
-    }
-  });
-
-  requestAnimationFrame(draw);
-})();
-
-// ════════════════════════════════════════════════
-//  2. THERMAL EXPANSION VISUALIZER
-// ════════════════════════════════════════════════
-(function () {
-  const canvas  = document.getElementById('heatCanvas');
-  const ctx     = canvas.getContext('2d');
-  const slider  = document.getElementById('heatSlider');
-  const readout = document.getElementById('heatReadout');
-  const badge   = document.getElementById('heatInfo');
-
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width  = 500 * dpr; canvas.height = 300 * dpr;
-  canvas.style.width = '100%'; canvas.style.height = 'auto';
-  ctx.scale(dpr, dpr);
-  const W = 500, H = 300;
-
-  const T_AMB_GROUND = 288.15;
-
-  function skinTemp(mach) {
-    const T_base = mach < 0.5 ? T_AMB_GROUND : T_AMB_GROUND - mach * 35;
-    return T_base * (1 + 0.2 * 0.9 * mach * mach) - 273.15;
-  }
-
-  function expansion_mm(mach) {
-    return (mach / 2.04) * (mach / 2.04) * 250;
-  }
-
-  function tempColor(t) {
-    const pct = Math.max(0, Math.min(1, (t - 10) / 120));
-    if (pct < 0.5) {
-      const r = Math.round(pct * 2 * 200);
-      const g = Math.round(100 + pct * 2 * 100);
-      const b = Math.round(255 - pct * 2 * 200);
-      return `rgb(${r},${g},${b})`;
-    } else {
-      const p2 = (pct - 0.5) * 2;
-      const r = Math.round(200 + p2 * 55);
-      const g = Math.round(200 - p2 * 160);
-      const b = Math.round(55 - p2 * 55);
-      return `rgb(${r},${g},${b})`;
-    }
-  }
-
-  let currentMach = 0;
-  let animMach = 0;
-  let maskCanvas = null;
-
-  // Load silhouette PNG and strip white background to create an alpha mask
-  const img = new Image();
-  img.src = 'Concorde Silh.png';
-  img.onload = () => {
-    maskCanvas = document.createElement('canvas');
-    maskCanvas.width = img.width;
-    maskCanvas.height = img.height;
-    const mctx = maskCanvas.getContext('2d');
-    mctx.drawImage(img, 0, 0);
-    const id = mctx.getImageData(0, 0, img.width, img.height);
-    const d = id.data;
-    for (let i = 0; i < d.length; i += 4) {
-      if (d[i] > 200 && d[i + 1] > 200 && d[i + 2] > 200) d[i + 3] = 0;
-    }
-    mctx.putImageData(id, 0, 0);
-    requestAnimationFrame(draw);
-  };
-
-  // Reusable offscreen canvas for gradient+mask compositing
-  const tmp = document.createElement('canvas');
-  const tctx = tmp.getContext('2d');
-
-  function draw() {
-    animMach += (currentMach - animMach) * 0.05;
-    const m = animMach;
-
-    ctx.clearRect(0, 0, W, H);
-    const bg = ctx.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#0a0c14'); bg.addColorStop(1, '#0f1220');
-    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
-
-    if (!maskCanvas) { requestAnimationFrame(draw); return; }
-
-    const temp = skinTemp(m);
-    const expMm = expansion_mm(m);
-    const expPx = (expMm / 250) * 30;
-
-    // Plane layout — silhouette is nose-right, tail-left
-    const BASE_W = 440;
-    const aspect = maskCanvas.height / maskCanvas.width;
-    const imgW = BASE_W + expPx;
-    const imgH = BASE_W * aspect;
-    const imgX = (W - BASE_W) / 2 - expPx / 2;
-    const imgY = H / 2 - imgH / 2 - 15;
-
-    // Cold reference line
-    const coldMid = W / 2;
-    const lineY = imgY + imgH + 14;
-    ctx.setLineDash([4, 4]);
-    ctx.strokeStyle = 'rgba(122,122,154,0.3)';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(coldMid - BASE_W / 2, lineY);
-    ctx.lineTo(coldMid + BASE_W / 2, lineY);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle = 'rgba(122,122,154,0.45)';
-    ctx.font = '10px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Cold length (ground)', coldMid, lineY + 13);
-    ctx.textAlign = 'left';
-
-    // Hot length expansion bracket
-    if (expPx > 1) {
-      const bracketY = lineY - 6;
-      ctx.strokeStyle = 'rgba(200,169,110,0.6)';
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.moveTo(imgX, bracketY);
-      ctx.lineTo(imgX + imgW, bracketY);
-      ctx.stroke();
-      [[imgX, 1], [imgX + imgW, -1]].forEach(([x, dir]) => {
-        ctx.beginPath();
-        ctx.moveTo(x, bracketY);
-        ctx.lineTo(x + dir * 6, bracketY - 4);
-        ctx.lineTo(x + dir * 6, bracketY + 4);
-        ctx.fillStyle = 'rgba(200,169,110,0.6)';
-        ctx.fill();
-      });
-      ctx.fillStyle = 'rgba(200,169,110,0.9)';
-      ctx.font = 'bold 10px sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText(`+${expMm.toFixed(0)} mm`, coldMid, bracketY - 3);
-      ctx.textAlign = 'left';
-    }
-
-    // Draw heat-coloured plane: gradient → masked by silhouette
-    tmp.width  = Math.ceil(imgW);
-    tmp.height = Math.ceil(imgH);
-    const grad = tctx.createLinearGradient(0, 0, imgW, 0);
-    grad.addColorStop(0,   tempColor(temp * 0.78));  // tail
-    grad.addColorStop(0.5, tempColor(temp * 0.95));  // mid-fuselage
-    grad.addColorStop(1,   tempColor(temp * 1.08));  // nose leading edge (hottest)
-    tctx.fillStyle = grad;
-    tctx.fillRect(0, 0, imgW, imgH);
-    tctx.globalCompositeOperation = 'destination-in';
-    tctx.drawImage(maskCanvas, 0, 0, imgW, imgH);
-    tctx.globalCompositeOperation = 'source-over';
-    ctx.drawImage(tmp, imgX, imgY);
-
-    // Engine exhaust glow (engines sit under left/rear of silhouette)
-    if (m > 0.2) {
-      const glowX = imgX + imgW * 0.09;
-      const glowY = imgY + imgH * 0.74;
-      const glow = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, 30);
-      glow.addColorStop(0, `rgba(255,${Math.round(180 - m * 80)},30,${Math.min(0.9, m * 0.7)})`);
-      glow.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.beginPath();
-      ctx.ellipse(glowX - 12, glowY, 30, 11, 0, 0, Math.PI * 2);
-      ctx.fillStyle = glow;
-      ctx.fill();
-    }
-
-    // Temperature badge
-    ctx.fillStyle = 'rgba(10,12,20,0.75)';
-    ctx.beginPath();
-    ctx.roundRect(10, 10, 178, 52, 6);
-    ctx.fill();
-    ctx.fillStyle = tempColor(temp);
-    ctx.font = 'bold 15px monospace';
-    ctx.fillText(`${temp.toFixed(0)} °C`, 20, 32);
-    ctx.fillStyle = 'rgba(122,122,154,0.8)';
-    ctx.font = '10px sans-serif';
-    ctx.fillText('fuselage skin temperature', 20, 50);
-
-    requestAnimationFrame(draw);
-  }
-
-  slider.addEventListener('input', () => {
-    currentMach = parseFloat(slider.value);
-    readout.textContent = `Mach ${currentMach.toFixed(2)}`;
-    const temp = skinTemp(currentMach);
-    const exp  = expansion_mm(currentMach);
-    badge.textContent = `🌡 Skin temp: ~${temp.toFixed(0)} °C  |  Expansion: +${exp.toFixed(0)} mm`;
-  });
-})();
-</script>
+<script src="mach-cone.js"></script>
+<script src="thermal-expansion.js"></script>
 
 </body>
 </html>
