@@ -1,9 +1,15 @@
 // Mach cone and sonic boom visualizer
+
+
 // This function animates a plane flying across the canvas, emitting expanding pressure wavefronts.
 // Once the plane exceeds Mach 1, a cone is drawn behind it at the correct Mach angle (u = arcsin(1/mach)).
 // The user can adjust speed with a slider to see how the cone narrows at higher Mach numbers.
 
+// ________________________________________________________________________________________________________
+
 // Machkegle og sonisk boom visualizer
+
+
 // Denne funktion animerer et fly, der flyver hen over canvas og udsender ekspanderende trykbølger.
 // Nar flyet overskrider Mach 1, tegnes en kegle bag det med den korrekte Mach-vinkel (u = arcsin(1/mach)).
 // Brugeren kan justere hastigheden med en slider for at se, hvordan keglen indsnævres ved højere Mach-tal.
@@ -16,6 +22,7 @@
 
   // Language strings are read from data attributes on the canvas element in the HTML.
   // This allows the same script to serve both the English and Danish pages.
+  
   // Sprogtekster laeses fra data-attributter pa canvas-elementet i HTML-filen.
   // Det giver det samme script mulighed for at betjene bade den engelske og danske side.
   const labels = {
@@ -26,6 +33,7 @@
   };
 
   // Scale canvas for high-DPI (retina) screens so it stays sharp.
+
   // Skalerer canvas til høj-DPI (retina) skaerme sa det forbliver skarpt.
   const dpr = window.devicePixelRatio || 1;
   canvas.width  = 500 * dpr; canvas.height = 300 * dpr;
@@ -95,10 +103,10 @@
       ctx.stroke();
     });
 
-    // Draw the Mach cone only when supersonic. The half-angle u = arcsin(1/mach) —
-    // as mach increases, u decreases, so the cone narrows. This is the correct physics.
-    // Tegn kun Mach-keglen nar flyet er supersonisk. Halvvinklen u = arcsin(1/mach) —
-    // nar mach øges, mindskes u, sa keglen indsnævres. Det er den korrekte fysik.
+    // Draw the Mach cone only when supersonic. The half-angle μ = arcsin(1/mach) —
+    // as mach increases, μ decreases, so the cone narrows. 
+    // Tegn kun Mach-keglen nar flyet er supersonisk. Halvvinklen μ = arcsin(1/mach) —
+    // nar mach stiger, så falder μ, og keglen bliver mindre. 
     if (mach >= 1.0) {
       const sinMu = 1 / mach;
       const mu = Math.asin(Math.min(1, sinMu));
@@ -120,12 +128,12 @@
       const angleDeg = (mu * 180 / Math.PI).toFixed(1);
       ctx.fillStyle = 'rgba(224,92,92,0.85)';
       ctx.font = '11px monospace';
-      ctx.fillText(`u = ${angleDeg} deg`, -coneLen * 0.5, -Math.tan(mu) * coneLen * 0.5 - 6);
+      ctx.fillText(`μ = ${angleDeg} deg`, -coneLen * 0.5, -Math.tan(mu) * coneLen * 0.5 - 6);
       ctx.restore();
     }
 
-    // Draw the simplified plane shape (fuselage, nose, delta wing).
-    // Tegn den forenklede flyform (fuselage, naese, deltavinge).
+    // A very simple version of the plane.
+    // En meget simpel version af flyet.
     ctx.save();
     ctx.translate(planeX, H / 2);
     ctx.fillStyle = '#e8e8f0';
@@ -148,7 +156,7 @@
   }
 
   // Update mach value and badge text when the slider moves.
-  // Opdater mach-vaerdi og badge-tekst nar slideren bevaeges.
+  // Mach-værdi og tekst opdateres nar slideren bevæges.
   slider.addEventListener('input', () => {
     mach = parseFloat(slider.value);
     readout.textContent = `Mach ${mach.toFixed(2)}`;
